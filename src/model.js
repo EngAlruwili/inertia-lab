@@ -1,6 +1,6 @@
 /**
  * Inertia Lab — System Frequency Response (SFR) model
- * Author: Abdullah Alruwailil
+ * Author: Abdullah Alruwaili
  * License: MIT
  *
  * Aggregated single-bus swing-equation model of a power system after a

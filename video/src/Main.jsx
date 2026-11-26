@@ -40,7 +40,7 @@ const Header = () => (
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, fontFamily: mono, fontWeight: 700, color: C.accent, letterSpacing: 6, fontSize: 26 }}>
       <span style={{ width: 16, height: 16, borderRadius: 8, background: C.accent, boxShadow: `0 0 18px ${C.accent}` }} />INERTIA LAB
     </div>
-    <div style={{ fontFamily: sans, color: C.muted, fontSize: 24, letterSpacing: 2 }}>ABDULLAH ALRUWAILIL</div>
+    <div style={{ fontFamily: sans, color: C.muted, fontSize: 24, letterSpacing: 2 }}>ABDULLAH ALRUWAILI</div>
   </div>
 );
 

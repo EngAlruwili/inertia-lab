@@ -256,7 +256,7 @@ export const OutroScene = ({ lines }) => {
       </FadeIn>
       <FadeIn at={18} style={{ textAlign: 'center' }}>
         <div style={{ fontFamily: sans, fontSize: 30, color: C.muted }}>Built by</div>
-        <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 58, color: C.accent }}>Abdullah Alruwailil</div>
+        <div style={{ fontFamily: sans, fontWeight: 800, fontSize: 58, color: C.accent }}>Abdullah Alruwaili</div>
         <div style={{ fontFamily: sans, fontSize: 28, color: C.muted, marginTop: 6 }}>Electrical Power Engineering</div>
       </FadeIn>
       <FadeIn at={lines[1].s} style={{ display: 'flex', gap: 20 }}>

@@ -1,4 +1,4 @@
-// Inertia Lab — UI layer · Abdullah Alruwailil · MIT
+// Inertia Lab — UI layer · Abdullah Alruwaili · MIT
 import { simulate, sweepRES, BESS_MODES, LIMITS } from './model.js';
 
 const $ = (id) => document.getElementById(id);

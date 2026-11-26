@@ -1,6 +1,6 @@
 # Inertia Lab: Model Documentation
 
-*Author: Abdullah Alruwailil*
+*Author: Abdullah Alruwaili*
 
 ## 1. Per-unit system
 

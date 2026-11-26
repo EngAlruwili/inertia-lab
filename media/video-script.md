@@ -12,7 +12,7 @@
 | 4 | 27–37 s | Scroll to **The inertia cliff** chart and hover along the red curve. | "Sweep renewables from 0 to 95 % and you find the cliff, the point where the grid starts shedding customers." |
 | 5 | 37–50 s | Back to the frequency chart: orange (grid-following) vs. green (grid-forming) curves. Zoom in on the first second. | "Add a 1,500 MW battery. A grid-following battery waits to measure frequency, and by then it's too late. A grid-forming battery acts like a virtual synchronous machine and responds in milliseconds." |
 | 6 | 50–60 s | KPI cards: red ❌, orange ❌, green ✅ **SECURE · 0 MW shed** | "Same battery. Same megawatts. Zero load shed. The only difference is the control." |
-| 7 | 60–70 s | Quick pan over the README and `npm test` passing, then end card: **Inertia Lab · Abdullah Alruwailil · link in comments** | "It's open source and runs in your browser. Link in the comments. Go break a grid." |
+| 7 | 60–70 s | Quick pan over the README and `npm test` passing, then end card: **Inertia Lab · Abdullah Alruwaili · link in comments** | "It's open source and runs in your browser. Link in the comments. Go break a grid." |
 
 ## Captions file (paste into CapCut auto-captions or as text overlays)
 

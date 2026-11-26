@@ -2,7 +2,7 @@
   "name": "inertia-lab-video",
   "private": true,
   "type": "module",
-  "author": "Abdullah Alruwailil",
+  "author": "Abdullah Alruwaili",
   "license": "MIT",
   "scripts": {
     "voice": "node scripts/gen-voice.mjs",

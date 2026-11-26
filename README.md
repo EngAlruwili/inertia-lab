@@ -4,7 +4,7 @@
 
 An interactive, browser-based simulator that shows how replacing synchronous generators with inverter-based renewables erodes grid inertia, and how a **grid-forming battery (virtual synchronous machine)** restores frequency stability where a conventional **grid-following** battery cannot.
 
-> Built by **Abdullah Alruwailil**, Electrical Power Engineering
+> Built by **Abdullah Alruwaili**, Electrical Power Engineering
 
 **Live demo:** `https://engalruwili.github.io/inertia-lab/`
 
@@ -109,9 +109,9 @@ This is an educational, aggregated model. It ignores network topology, voltage d
 
 ## Author
 
-**Abdullah Alruwailil**, Electrical Power Engineering.
+**Abdullah Alruwaili**, Electrical Power Engineering.
 Feedback and pull requests are welcome.
 
 ## License
 
-[MIT](LICENSE) © 2026 Abdullah Alruwailil
+[MIT](LICENSE) © 2026 Abdullah Alruwaili
