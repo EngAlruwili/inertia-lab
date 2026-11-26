@@ -6,7 +6,7 @@ An interactive, browser-based simulator that shows how replacing synchronous gen
 
 > Built by **Abdullah Alruwailil**, Electrical Power Engineering
 
-**Live demo:** `https://<your-github-username>.github.io/inertia-lab/`
+**Live demo:** `https://engalruwili.github.io/inertia-lab/`
 
 ---
 
@@ -80,7 +80,7 @@ npm test
 No build step and no dependencies beyond Chart.js (loaded from a CDN).
 
 ```bash
-git clone https://github.com/<your-github-username>/inertia-lab.git
+git clone https://github.com/EngAlruwili/inertia-lab.git
 cd inertia-lab
 npm start            # serves on http://localhost:8080
 ```

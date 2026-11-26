@@ -47,5 +47,5 @@ Live demo + open-source code in the first comment.
 
 ## First comment
 
-🔗 Live demo: https://<your-github-username>.github.io/inertia-lab/
-💻 Code (MIT): https://github.com/<your-github-username>/inertia-lab
+🔗 Live demo: https://engalruwili.github.io/inertia-lab/
+💻 Code (MIT): https://github.com/EngAlruwili/inertia-lab
