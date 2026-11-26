@@ -1,0 +1,12 @@
+{
+  "name": "inertia-lab",
+  "version": "1.0.0",
+  "description": "Interactive low-inertia power grid frequency simulator: grid-following vs grid-forming batteries.",
+  "type": "module",
+  "author": "Abdullah Alruwailil",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/",
+    "start": "npx -y http-server -p 8080 -c-1 ."
+  }
+}

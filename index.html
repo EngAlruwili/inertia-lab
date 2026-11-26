@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inertia Lab</title>
+  <meta name="description" content="Interactive simulator: what happens to grid frequency when renewables replace spinning generators — and how grid-forming batteries save it. By Abdullah Alruwailil." />
+  <meta name="author" content="Abdullah Alruwailil" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">
+      <span class="pulse"></span>
+      <span class="mono">INERTIA&nbsp;LAB</span>
+    </div>
+    <h1>What happens when a power grid loses its <em>spinning mass</em>?</h1>
+    <p class="lead">
+      Every coal, gas and nuclear unit stores kinetic energy in a rotor spinning at exactly 50&nbsp;Hz.
+      Solar and wind connect through inverters and store <strong>none</strong>.
+      Trip a power plant, push renewables higher, and watch the frequency fall faster and deeper, until the grid
+      sheds load or collapses. Then let a <strong>grid-forming battery</strong> fight back.
+    </p>
+    <p class="byline">Built by <strong>Abdullah Alruwailil</strong> · Electrical Power Engineering</p>
+  </header>
+
+  <main>
+    <section class="fleet card" aria-label="Generation fleet">
+      <div class="fleet-head">
+        <h2>Generation fleet</h2>
+        <span class="mono small" id="fleetLabel"></span>
+      </div>
+      <div id="fleet" class="fleet-row"></div>
+      <div class="freq-readout">
+        <div>
+          <div class="label">Grid frequency</div>
+          <div class="mono big" id="liveHz">50.000 Hz</div>
+        </div>
+        <button id="playBtn" class="play">▶&nbsp; Trip a power plant</button>
+      </div>
+    </section>
+
+    <section class="layout">
+      <aside class="card controls" aria-label="Scenario controls">
+        <h2>Scenario</h2>
+
+        <label class="ctl">
+          <span>Renewable share <b class="mono" id="resVal"></b></span>
+          <input type="range" id="res" min="0" max="95" step="1" value="70" />
+        </label>
+        <label class="ctl">
+          <span>System demand <b class="mono" id="loadVal"></b></span>
+          <input type="range" id="load" min="5000" max="60000" step="1000" value="20000" />
+        </label>
+        <label class="ctl">
+          <span>Generator lost <b class="mono" id="lossVal"></b></span>
+          <input type="range" id="loss" min="200" max="3000" step="100" value="1200" />
+        </label>
+        <label class="ctl">
+          <span>Battery rating <b class="mono" id="bessVal"></b></span>
+          <input type="range" id="bess" min="0" max="3000" step="100" value="1000" />
+        </label>
+        <label class="ctl">
+          <span>Synchronous inertia H <b class="mono" id="hVal"></b></span>
+          <input type="range" id="h" min="2" max="8" step="0.5" value="5" />
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="ufls" checked />
+          <span>Under-frequency load shedding</span>
+        </label>
+
+        <div class="presets">
+          <span class="label">Presets</span>
+          <button data-preset="classic">Classic grid</button>
+          <button data-preset="today">Today</button>
+          <button data-preset="2035">2035</button>
+          <button data-preset="edge">On the edge</button>
+        </div>
+      </aside>
+
+      <div class="results">
+        <div class="kpis" id="kpis"></div>
+
+        <div class="card chart-card">
+          <div class="chart-head">
+            <h2>Frequency after the trip</h2>
+            <div class="legend">
+              <span class="lg none">No support</span>
+              <span class="lg gfl">Grid-following battery</span>
+              <span class="lg gfm">Grid-forming battery</span>
+            </div>
+          </div>
+          <div class="chart-box"><canvas id="freqChart"></canvas></div>
+        </div>
+
+        <div class="grid2">
+          <div class="card chart-card">
+            <div class="chart-head">
+              <h2>The inertia cliff</h2>
+              <span class="small muted">Frequency nadir vs renewable share</span>
+            </div>
+            <div class="chart-box sm"><canvas id="cliffChart"></canvas></div>
+          </div>
+          <div class="card chart-card">
+            <div class="chart-head">
+              <h2>Who saves the grid?</h2>
+              <select id="powerMode" aria-label="Battery mode for power chart">
+                <option value="gfm">Grid-forming battery</option>
+                <option value="gfl">Grid-following battery</option>
+                <option value="none">No support</option>
+              </select>
+            </div>
+            <div class="chart-box sm"><canvas id="powerChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card explain">
+      <h2>The physics in one equation</h2>
+      <p class="eq mono">2·H<sub>sys</sub> · dΔf/dt = ΔP<sub>gov</sub> + ΔP<sub>battery</sub> + ΔP<sub>shed</sub> − ΔP<sub>loss</sub> − D·Δf</p>
+      <div class="cols">
+        <div>
+          <h3>Inertia (H)</h3>
+          <p>The first line of defence. It decides how fast frequency falls in the first second (RoCoF = ΔP·f₀ / 2H). Inverter-based renewables contribute zero, so H<sub>sys</sub> = H<sub>sync</sub>·(1 − RES share).</p>
+        </div>
+        <div>
+          <h3>Grid-following battery</h3>
+          <p>Measures frequency with a PLL, waits for detection, then injects power. Strong, but ~250&nbsp;ms late, and in a low-inertia grid the damage is done by then.</p>
+        </div>
+        <div>
+          <h3>Grid-forming battery (VSM)</h3>
+          <p>Behaves like a voltage source with a virtual rotor. It responds to RoCoF instantly (synthetic inertia), so it slows the fall before the frequency has dropped far.</p>
+        </div>
+      </div>
+      <p class="small muted">Aggregated single-bus system frequency response model with reheat-steam governors, headroom limits, load damping, five-stage UFLS, RoCoF (500&nbsp;ms window) and 47.5&nbsp;Hz collapse limits. Educational model; parameters are typical values for a 50&nbsp;Hz system.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Abdullah Alruwailil · MIT License</span>
+    <a href="https://github.com/" id="repoLink">Source on GitHub</a>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
