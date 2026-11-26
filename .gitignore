@@ -2,3 +2,5 @@ node_modules/
 .claude/
 *.log
 .DS_Store
+video/out/
+video/node_modules/

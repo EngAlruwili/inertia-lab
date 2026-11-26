@@ -1,0 +1,27 @@
+{
+  "name": "inertia-lab-video",
+  "private": true,
+  "type": "module",
+  "author": "Abdullah Alruwailil",
+  "license": "MIT",
+  "scripts": {
+    "voice": "node scripts/gen-voice.mjs",
+    "studio": "remotion studio src/index.jsx",
+    "render": "remotion render src/index.jsx InertiaLab out/inertia-lab.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.547",
+    "@remotion/google-fonts": "4.0.547",
+    "@remotion/media": "4.0.547",
+    "remotion": "4.0.547",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "msedge-tts": "2.1.1",
+    "music-metadata": "11.2.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
+}
