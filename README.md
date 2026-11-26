@@ -6,7 +6,19 @@ An interactive, browser-based simulator that shows how replacing synchronous gen
 
 > Built by **Abdullah Alruwaili**, Electrical Power Engineering
 
-**Live demo:** `https://engalruwili.github.io/inertia-lab/`
+<p>
+  <a href="https://engalruwili.github.io/inertia-lab/"><img alt="Live demo" src="https://img.shields.io/badge/Live%20demo-open%20simulator-2ee6a6?style=for-the-badge"></a>
+  <a href="media/inertia-lab-video.mp4"><img alt="Video" src="https://img.shields.io/badge/Video-explainer%20(74%20s)-36d6ff?style=for-the-badge"></a>
+  <img alt="Tests" src="https://img.shields.io/badge/tests-5%20passing-brightgreen?style=for-the-badge">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge">
+</p>
+
+[![Inertia Lab simulator](media/screenshot.png)](https://engalruwili.github.io/inertia-lab/)
+
+<p align="center">
+  <img src="media/demo.gif" alt="Grid-following vs grid-forming battery after a 1,800 MW trip" width="380"><br>
+  <sub>Same 1,500 MW battery. Grid-following (orange) vs grid-forming (green) after a 1,800 MW trip at 90 % renewables.</sub>
+</p>
 
 ---
 
